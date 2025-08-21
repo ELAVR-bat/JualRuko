@@ -1,0 +1,28 @@
+:root {
+  --primary: #2C3E50;
+  --secondary: #E67E22;
+  --accent: #3498DB;
+  --light: #ECF0F1;
+  --dark: #2C3E50;
+  --gray: #95A5A6;
+  --white: #FFFFFF;
+  --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease;
+}
+
+/* Copy all CSS from sasa.html */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #FAFAFA;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Paste the rest of the CSS from sasa.html styles here */
