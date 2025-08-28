@@ -98,7 +98,7 @@ export default function Home() {
           <div className="property-card">
             <div className="property-media">
               <img
-                src="https://events.rumah123.com/wp-content/uploads/sites/38/2024/09/06121558/kata-kata-promosi-tanah-kavling.jpg"
+                src="https://h.top4top.io/p_3527d7l5v1.jpg"
                 alt="Tanah Kavling"
               />
             </div>
@@ -157,7 +157,7 @@ export default function Home() {
               </div>
               <p>
                 Lantai 1 bisa dibeli dengan harga{" "}
-                <span className="highlight">Rp 185.000.000</span>.
+                <span className="highlight">Rp185.000.000</span>.
               </p>
               <p>
                 <i className="fas fa-map-marker-alt highlight"></i> Lokasi: dekat Terminal AKAP & UNRI.
