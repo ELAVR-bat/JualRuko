@@ -156,9 +156,9 @@ export default function Home() {
                 </span>
               </div>
             <p>
-        Disewakan Seharga <span className="highlight">Rp1.000.000</span> ( Satu Juta ) 
-        <br>Perbulan & Tahunan Cukup <span className="highlight">Rp10.000.000</span> ( Sepuluh Juta )</br>
-        <br>1 Ruko Seharga{" "} <span className="highlight">Rp185.000.000</span> ( Seratus Delapan Puluh Lima Juta )</br>
+        Disewakan Seharga <span className="highlight">Rp1.000.000</span> ( Satu Juta )
+        <br>Perbulan & Tahunan Cukup <span className="highlight">Rp10.000.000</span> ( Sepuluh Juta )</br><br>
+        <br>1 Ruko Seharga{" "} <span className="highlight">Rp185.000.000</span> ( Seratus Delapan Puluh Lima Juta )</br><br>
         <br>4 Ruko Seharga{" "} <span className="highlight">Rp530.000.000</span> ( Lima Ratus Tiga Puluh Juta ).
             </p>
             </span>
