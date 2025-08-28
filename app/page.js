@@ -160,7 +160,7 @@ export default function Home() {
         <br>Perbulan & Tahunan Cukup <span className="highlight">Rp10.000.000</span> ( Sepuluh Juta ) 
         <br>1 Ruko Seharga{" "} <span className="highlight">Rp185.000.000</span> ( Seratus Delapan Puluh Lima Juta )
         <br>4 Ruko Seharga{" "} <span className="highlight">Rp530.000.000</span> ( Lima Ratus Tiga Puluh Juta ). 
-          </span>.
+          </span>
            </p>
               <p>
                 <i className="fas fa-map-marker-alt highlight"></i> Lokasi: dekat Terminal AKAP & UNRI.
