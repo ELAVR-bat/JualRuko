@@ -1,8 +1,30 @@
 "use client"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    const savedTheme = typeof window !== "undefined" ? localStorage.getItem("theme") : null;
+    const prefersDark = typeof window !== "undefined" && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const initialTheme = savedTheme || (prefersDark ? "dark" : "light");
+    setTheme(initialTheme);
+    if (typeof document !== "undefined") {
+      document.documentElement.classList.toggle("dark", initialTheme === "dark");
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    setTheme(nextTheme);
+    if (typeof document !== "undefined") {
+      document.documentElement.classList.toggle("dark", nextTheme === "dark");
+    }
+    if (typeof window !== "undefined") {
+      localStorage.setItem("theme", nextTheme);
+    }
+  };
 
   return (
     <>
@@ -19,6 +41,10 @@ export default function Home() {
           <span></span>
           <span></span>
         </label>
+
+        <button type="button" className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
+          <i className={theme === "dark" ? "fas fa-sun" : "fas fa-moon"}></i>
+        </button>
 
         <nav className="menu">
           <a href="#Homestay"><i className="fas fa-home"></i> Homestay</a>
@@ -40,7 +66,7 @@ export default function Home() {
           <h2>Homestay Eksklusif</h2>
           <div className="property-card">
             <div className="property-media">
-              <video controls autoPlay muted loop>
+              <video controls autoPlay muted loop playsInline preload="metadata">
                 <source
                   src="https://l.top4top.io/m_343408ct91.mp4"
                   type="video/mp4"
@@ -76,6 +102,7 @@ export default function Home() {
                 <a
                   href="https://wa.me/6285278087340"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="wa-button"
                 >
                   <i className="fab fa-whatsapp"></i> Hubungi Pak Tom
@@ -83,6 +110,7 @@ export default function Home() {
                 <a
                   href="https://wa.me/6281927724979"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="wa-button"
                 >
                   <i className="fab fa-whatsapp"></i> Hubungi Daniel
@@ -100,6 +128,8 @@ export default function Home() {
               <img
                 src="https://h.top4top.io/p_3527d7l5v1.jpg"
                 alt="Tanah Kavling"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="property-content">
@@ -112,6 +142,7 @@ export default function Home() {
                 <a
                   href="https://wa.me/6285278087340"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="wa-button"
                 >
                   <i className="fab fa-whatsapp"></i> Info Pak Tom
@@ -119,6 +150,7 @@ export default function Home() {
                 <a
                   href="https://wa.me/6281927724979"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="wa-button"
                 >
                   <i className="fab fa-whatsapp"></i> Info Daniel
@@ -133,7 +165,7 @@ export default function Home() {
           <h2>Ruko Komersial</h2>
           <div className="property-card">
             <div className="property-media">
-              <video controls autoPlay muted loop>
+              <video controls autoPlay muted loop playsInline preload="metadata">
                 <source
                   src="https://k.top4top.io/m_3434p6ejw0.mp4"
                   type="video/mp4"
@@ -155,13 +187,15 @@ export default function Home() {
                   <i className="fas fa-plus"></i> Tanah Tambahan
                 </span>
               </div>
-            <p>
-        Disewakan Seharga <span className="highlight">Rp1.000.000</span> ( Satu Juta )
-        <br>Perbulan & Tahunan Cukup <span className="highlight">Rp10.000.000</span> ( Sepuluh Juta )</br><br>
-        <br>1 Ruko Seharga{" "} <span className="highlight">Rp185.000.000</span> ( Seratus Delapan Puluh Lima Juta )</br><br>
-        <br>4 Ruko Seharga{" "} <span className="highlight">Rp530.000.000</span> ( Lima Ratus Tiga Puluh Juta ).
-            </p>
-            </span>
+              <p>
+                Disewakan Seharga <span className="highlight">Rp1.000.000</span> (Satu Juta)
+                <br />
+                Perbulan & Tahunan Cukup <span className="highlight">Rp10.000.000</span> (Sepuluh Juta)
+                <br />
+                1 Ruko Seharga <span className="highlight">Rp185.000.000</span> (Seratus Delapan Puluh Lima Juta)
+                <br />
+                4 Ruko Seharga <span className="highlight">Rp530.000.000</span> (Lima Ratus Tiga Puluh Juta).
+              </p>
               <p>
                 <i className="fas fa-map-marker-alt highlight"></i> Lokasi: dekat Terminal AKAP & UNRI.
               </p>
@@ -169,6 +203,7 @@ export default function Home() {
                 <a
                   href="https://wa.me/6285278087340"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="wa-button"
                 >
                   <i className="fab fa-whatsapp"></i> Hubungi Pak Tom
@@ -176,6 +211,7 @@ export default function Home() {
                 <a
                   href="https://wa.me/6281927724979"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="wa-button"
                 >
                   <i className="fab fa-whatsapp"></i> Hubungi Daniel
@@ -214,6 +250,7 @@ export default function Home() {
             <a
               href="https://www.instagram.com/pelfriede_anita_sihotang"
               target="_blank"
+              rel="noopener noreferrer"
               className="social-item"
             >
               <div className="social-icon">
@@ -224,6 +261,7 @@ export default function Home() {
             <a
               href="https://wa.me/6289657666808"
               target="_blank"
+              rel="noopener noreferrer"
               className="social-item"
             >
               <div className="social-icon">
