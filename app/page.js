@@ -7,8 +7,7 @@ export default function Home() {
 
   useEffect(() => {
     const savedTheme = typeof window !== "undefined" ? localStorage.getItem("theme") : null;
-    const prefersDark = typeof window !== "undefined" && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const initialTheme = savedTheme || (prefersDark ? "dark" : "light");
+    const initialTheme = savedTheme || "light";
     setTheme(initialTheme);
     if (typeof document !== "undefined") {
       document.documentElement.classList.toggle("dark", initialTheme === "dark");
