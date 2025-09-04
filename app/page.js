@@ -91,8 +91,7 @@ export default function Home() {
                 </span>
               </div>
               <p>
-                Homestay nyaman di kawasan <span className="highlight">Panam</span>. Dijual juga dengan harga{" "}
-                <span className="highlight">Rp 185.000.000</span> per lantai.
+                Homestay nyaman di kawasan <span className="highlight">Panam</span>.
               </p>
               <p>
                 <i className="fas fa-map-marker-alt highlight"></i> Lokasi: Damai Residence, Panam, Pekanbaru.
